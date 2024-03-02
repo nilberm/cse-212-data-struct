@@ -8,16 +8,32 @@
  * GitHub repository, unshared Google Drive folder) is acceptable.
  */
 
+using System;
 
-Console.WriteLine("\n======================\nDivisors\n======================");
-Divisors.Run();
+namespace week01Teach
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      // Console.WriteLine("\n======================\nDivisors\n======================");
+      // Divisors.Run();
 
-Console.WriteLine("\n======================\nArray Selector\n======================");
-ArraySelector.Run();
+      // Console.WriteLine("\n======================\nDivisors\n======================");
+      // Divisors.Run();
 
+      // Console.WriteLine("\n======================\nArray Selector\n======================");
+      // ArraySelector.Run();
+
+      Console.WriteLine("\n======================\nAlgorithms\n======================");
+      Algorithms.Run();
+    }
+  }
+
+
+}
 // Uncomment when you are ready to run this
-// Console.WriteLine("\n======================\nAlgorithms\n======================");
-// Algorithms.Run();
+
 
 
 

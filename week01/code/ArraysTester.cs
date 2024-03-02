@@ -1,8 +1,10 @@
-public static class ArraysTester {
+public static class ArraysTester
+{
     /// <summary>
     /// Entry point for the tests
     /// </summary>
-    public static void Run() {
+    public static void Run()
+    {
         // Sample Test Cases (may not be comprehensive)
         Console.WriteLine("\n=========== PROBLEM 1 TESTS ===========");
         double[] multiples = MultiplesOf(7, 5);
@@ -26,22 +28,39 @@ public static class ArraysTester {
         RotateListRight(numbers, 9);
         Console.WriteLine($"<List>{{{string.Join(',', numbers)}}}"); // <List>{1, 2, 3, 4, 5, 6, 7, 8, 9}
     }
-    /// <summary>
-    /// This function will produce a list of size 'length' starting with 'number' followed by multiples of 'number'.  For 
-    /// example, MultiplesOf(7, 5) will result in: {7, 14, 21, 28, 35}.  Assume that length is a positive
-    /// integer greater than 0.
-    /// </summary>
-    /// <returns>array of doubles that are the multiples of the supplied number</returns>
+
     private static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
 
-        return new double[0]; // replace this return statement with your own
+
+        // create variable to control the while loop
+        bool continueLoop = true;
+
+        // create variable to control the factor of the multiplication
+        double count = 1;
+
+        // create Array to store the result of the multiplication
+        List<double> result = new List<double>();
+
+        // while loop that will be true until the length of the array is greater than or equal the length received as a parameter
+        while (continueLoop)
+        {
+            // check the result length to scape the loop
+            if (result.Count >= length)
+            {
+                continueLoop = false;
+            }
+            else
+            {
+                // add the product of the multiplication to the array
+                result.Add(number * count);
+                count++;
+            }
+        }
+
+        return result.ToArray();
     }
-    
+
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
     /// <c>&lt;List&gt;{1, 2, 3, 4, 5, 6, 7, 8, 9}</c> and an amount is 3 then the list returned should be 
@@ -52,10 +71,18 @@ public static class ArraysTester {
     /// </summary>
     private static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
 
+        // divide the list into two lists
+        List<int> firstHalf = data.GetRange(0, data.Count - amount);
+        List<int> secondHalf = data.GetRange(data.Count - amount, amount);
+
+        // join both list 
+        secondHalf.AddRange(firstHalf);
+
+        // clear the original list
+        data.Clear();
+
+        // add the joined list to the original list
+        data.AddRange(secondHalf);
     }
 }
