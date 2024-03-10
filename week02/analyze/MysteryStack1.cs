@@ -8,8 +8,12 @@
  * repository (e.g. private GitHub repository, unshared Google Drive
  * folder) is acceptable.
  */
-public static class MysteryStack1 {
-    public static string Run(string text) {
+
+// will reverse the text
+public static class MysteryStack1
+{
+    public static string Run(string text)
+    {
         var stack = new Stack<char>();
         foreach (var letter in text)
             stack.Push(letter);
